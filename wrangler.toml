@@ -1,0 +1,13 @@
+name = "repo"
+compatibility_date = "2024-09-03"
+compatibility_flags = [ "nodejs_compat" ]
+pages_build_output_dir = ".vercel/output/static"
+
+[placement]
+mode = "smart"
+
+[[d1_databases]]
+binding = "DATABASE"
+database_name = "cloudflare-saas-db"
+database_id = "df12bc6d-15eb-45f0-88a5-8cf07a863c8a"
+migrations_dir = "./drizzle"
