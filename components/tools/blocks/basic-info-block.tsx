@@ -18,40 +18,75 @@ export function BasicInfoBlock({ form }: BasicInfoBlockProps) {
         <CardTitle>Basic Information</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="required">Name</FormLabel>
-              <FormControl>
-                <Input placeholder="Next.js" {...field} />
-              </FormControl>
-              <FormDescription>
-                The name of the tool as it will appear on the platform.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
 
-        <FormField
-          control={form.control}
-          name="slug"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="required">Slug</FormLabel>
-              <FormControl>
-                <Input placeholder="nextjs" {...field} />
-              </FormControl>
-              <FormDescription>
-                The URL-friendly version of the name.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="required">Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Next.js" {...field} />
+                </FormControl>
+                <FormDescription>
+                  The name of the tool as it will appear on the platform.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
+          <FormField
+            control={form.control}
+            name="slug"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="required">Slug</FormLabel>
+                <FormControl>
+                  <Input placeholder="nextjs" {...field} />
+                </FormControl>
+                <FormDescription>
+                  The URL-friendly version of the name.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+          <FormField
+            control={form.control}
+            name="websiteUrl"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="required">Website URL</FormLabel>
+                <FormControl>
+                  <Input placeholder="https://example.com" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="logoUrl"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Logo URL</FormLabel>
+                <FormControl>
+                  <Input
+                    placeholder="https://example.com/logo.png"
+                    {...field}
+                    value={field.value || ""}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
         <FormField
           control={form.control}
           name="description"

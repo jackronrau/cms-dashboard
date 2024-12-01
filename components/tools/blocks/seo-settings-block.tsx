@@ -25,7 +25,11 @@ export function SeoSettingsBlock({ form }: SeoSettingsBlockProps) {
               <FormItem>
                 <FormLabel>Meta Title</FormLabel>
                 <FormControl>
-                  <Input placeholder="SEO title" {...field} />
+                  <Input
+                    placeholder="SEO title"
+                    {...field}
+                    value={field.value || ""}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -39,7 +43,11 @@ export function SeoSettingsBlock({ form }: SeoSettingsBlockProps) {
               <FormItem>
                 <FormLabel>Meta Description</FormLabel>
                 <FormControl>
-                  <Input placeholder="SEO description" {...field} />
+                  <Input
+                    placeholder="SEO description"
+                    {...field}
+                    value={field.value || ""}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -53,7 +61,11 @@ export function SeoSettingsBlock({ form }: SeoSettingsBlockProps) {
               <FormItem>
                 <FormLabel>OG Image URL</FormLabel>
                 <FormControl>
-                  <Input placeholder="Social share image URL" {...field} />
+                  <Input
+                    placeholder="Social share image URL"
+                    {...field}
+                    value={field.value || ""}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -67,7 +79,11 @@ export function SeoSettingsBlock({ form }: SeoSettingsBlockProps) {
               <FormItem>
                 <FormLabel>Canonical URL</FormLabel>
                 <FormControl>
-                  <Input placeholder="Canonical URL" {...field} />
+                  <Input
+                    placeholder="Canonical URL"
+                    {...field}
+                    value={field.value || ""}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

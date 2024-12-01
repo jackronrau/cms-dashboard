@@ -18,7 +18,7 @@ export default function NewToolPage() {
           <CardTitle>Tool Details</CardTitle>
         </CardHeader>
         <CardContent>
-          <ToolForm categories={[]} />
+          <ToolForm />
         </CardContent>
       </Card>
     </div>

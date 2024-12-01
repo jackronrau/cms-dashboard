@@ -47,4 +47,4 @@ interface ResourceTool extends BaseToolFields {
   }[];
 }
 
-type Tool = GithubTool | ResourceTool;
+export type Tool = GithubTool | ResourceTool;

@@ -24,7 +24,7 @@ export function TypeSettingsBlock({ form, categories }: TypeSettingsBlockProps) 
       const newSelection = prev.includes(categoryId)
         ? prev.filter(id => id !== categoryId)
         : [...prev, categoryId];
-      
+
       form.setValue("categories", newSelection);
       return newSelection;
     });
@@ -36,62 +36,64 @@ export function TypeSettingsBlock({ form, categories }: TypeSettingsBlockProps) 
         <CardTitle>Type Settings</CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <FormField
-          control={form.control}
-          name="type"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="required">Type</FormLabel>
-              <Select
-                onValueChange={field.onChange}
-                defaultValue={field.value}
-              >
-                <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select tool type" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectItem value="github">GitHub Project</SelectItem>
-                  <SelectItem value="resource">Resource</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormDescription>
-                The type of tool being added.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+          <FormField
+            control={form.control}
+            name="type"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="required">Type</FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select tool type" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="github">GitHub Project</SelectItem>
+                    <SelectItem value="resource">Resource</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormDescription>
+                  The type of tool being added.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <FormField
-          control={form.control}
-          name="usage"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="required">Usage Type</FormLabel>
-              <Select
-                onValueChange={field.onChange}
-                defaultValue={field.value}
-              >
-                <FormControl>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select usage type" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectItem value="free">Free</SelectItem>
-                  <SelectItem value="paid">Paid</SelectItem>
-                  <SelectItem value="freemium">Freemium</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormDescription>
-                The pricing model of the tool.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+          <FormField
+            control={form.control}
+            name="usage"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="required">Usage Type</FormLabel>
+                <Select
+                  onValueChange={field.onChange}
+                  defaultValue={field.value}
+                >
+                  <FormControl>
+                    <SelectTrigger>
+                      <SelectValue placeholder="Select usage type" />
+                    </SelectTrigger>
+                  </FormControl>
+                  <SelectContent>
+                    <SelectItem value="free">Free</SelectItem>
+                    <SelectItem value="paid">Paid</SelectItem>
+                    <SelectItem value="freemium">Freemium</SelectItem>
+                  </SelectContent>
+                </Select>
+                <FormDescription>
+                  The pricing model of the tool.
+                </FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
         <FormField
           control={form.control}
